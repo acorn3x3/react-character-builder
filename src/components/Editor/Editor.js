@@ -1,12 +1,15 @@
 import React from 'react';
 import './Editor.css';
 
-export default function Editor({ top, setTop, mid, setMid }) {
+export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
   const topHandler = (e) => {
     setTop(e.target.value);
   };
   const midHandler = (e) => {
     setMid(e.target.value);
+  };
+  const botHandler = (e) => {
+    setBot(e.target.value);
   };
 
   return (
@@ -43,7 +46,7 @@ export default function Editor({ top, setTop, mid, setMid }) {
       </select>
 
       <label>Boots</label>
-      <select>
+      <select value={bot} onChange={botHandler}>
         <option value="1">Boots</option>
         <option value="2">Reinforced Boots</option>
         <option value="3">Steel</option>

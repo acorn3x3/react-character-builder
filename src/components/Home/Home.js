@@ -10,9 +10,9 @@ export default function Home() {
 
   return (
     <main>
-      <Editor top={top} setTop={setTop} mid={mid} setMid={setMid} />
+      <Editor top={top} setTop={setTop} mid={mid} setMid={setMid} bot={bot} setBot={setBot}/>
 
-      <Preview top={top} />
+      <Preview top={top} mid={mid} bot={bot} />
     </main>
   );
 }
