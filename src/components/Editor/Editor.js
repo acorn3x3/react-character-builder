@@ -30,7 +30,7 @@ export default function Editor({ top, setTop }) {
         <option value="1">Leather</option>
         <option value="2">Padded</option>
         <option value="3">Plate</option>
-        <option value="4">Greater leather</option>
+        <option value="4">Greater Leather</option>
         <option value="5">Greater Padded</option>
         <option value="6">Greater Plate</option>
         <option value="7">Dragon Leather</option>
