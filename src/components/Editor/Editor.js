@@ -1,9 +1,12 @@
 import React from 'react';
 import './Editor.css';
 
-export default function Editor({ top, setTop }) {
+export default function Editor({ top, setTop, mid, setMid }) {
   const topHandler = (e) => {
     setTop(e.target.value);
+  };
+  const midHandler = (e) => {
+    setMid(e.target.value);
   };
 
   return (
@@ -26,7 +29,7 @@ export default function Editor({ top, setTop }) {
       </div>
 
       <label>Body Armor</label>
-      <select>
+      <select value={mid} onChange={midHandler}>
         <option value="1">Leather</option>
         <option value="2">Padded</option>
         <option value="3">Plate</option>
