@@ -8,12 +8,22 @@ export default function Home() {
   const [top, setTop] = useState('0');
   const [mid, setMid] = useState('0');
   const [bot, setBot] = useState('0');
+  const [hand, setHand] = useState('0');
 
   return (
     <main>
-      <Editor top={top} setTop={setTop} mid={mid} setMid={setMid} bot={bot} setBot={setBot} />
+      <Editor
+        top={top}
+        setTop={setTop}
+        mid={mid}
+        setMid={setMid}
+        bot={bot}
+        setBot={setBot}
+        hand={hand}
+        setHand={setHand}
+      />
 
-      <Preview top={top} mid={mid} bot={bot} />
+      <Preview top={top} mid={mid} bot={bot} hand={hand} />
     </main>
   );
 }

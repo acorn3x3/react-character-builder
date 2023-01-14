@@ -3,10 +3,11 @@ import './Editor.css';
 import Count from '../Count/Count';
 import { useState } from 'react';
 
-export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
+export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, setHand }) {
   const [topCount, setTopcount] = useState(0);
   const [midCount, setMidcount] = useState(0);
   const [botCount, setBotcount] = useState(0);
+  const [handCount, setHandcount] = useState(0);
 
   const topHandler = (e) => {
     setTop(e.target.value);
@@ -23,6 +24,12 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
   const botHandler = (e) => {
     setBot(e.target.value);
     setBotcount((currentState) => {
+      return currentState + 1;
+    });
+  };
+  const handHandler = (e) => {
+    setHand(e.target.value);
+    setHandcount((currentState) => {
       return currentState + 1;
     });
   };
@@ -45,7 +52,6 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
           <option value="0">Agatha</option>
         </select>
       </div>
-
       <label>Body Armor</label>
       <select value={mid} onChange={midHandler}>
         <option value="1">Leather</option>
@@ -59,7 +65,18 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
         <option value="9">Dragon Plate</option>
         <option value="0">Grand Dragon Almighty</option>
       </select>
-
+      <br></br>
+      <label>Weapon</label>
+      <select value={hand} onChange={handHandler}>
+        <option value="1">Boots</option>
+        <option value="2">Reinforced Boots</option>
+        <option value="3">Steel</option>
+        <option value="4">Plate</option>
+        <option value="5">Swift</option>
+        <option value="6">Ninja</option>
+        <option value="7">Excaliboot</option>
+      </select>
+      <br></br>
       <label>Boots</label>
       <select value={bot} onChange={botHandler}>
         <option value="1">Boots</option>
@@ -71,7 +88,11 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
         <option value="7">Excaliboot</option>
       </select>
       <div>
-        <Count topCount={topCount} midCount={midCount} botCount={botCount} />
+        <Count topCount={topCount} midCount={midCount} botCount={botCount} handCount={handCount} />
+      </div>
+      <div>
+        <label>Catchphrase</label>
+        <input type="text"></input>
       </div>
     </div>
   );
