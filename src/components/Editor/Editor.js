@@ -68,13 +68,13 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, se
       <br></br>
       <label>Weapon</label>
       <select value={hand} onChange={handHandler}>
-        <option value="1">Boots</option>
-        <option value="2">Reinforced Boots</option>
-        <option value="3">Steel</option>
-        <option value="4">Plate</option>
-        <option value="5">Swift</option>
-        <option value="6">Ninja</option>
-        <option value="7">Excaliboot</option>
+        <option value="1">Bow</option>
+        <option value="3">Flail</option>
+        <option value="4">Gunblade</option>
+        <option value="5">Pistol</option>
+        <option value="9">Sword</option>
+        <option value="7">Katana</option>
+        <option value="8">Dagger</option>
       </select>
       <br></br>
       <label>Boots</label>
