@@ -6,7 +6,9 @@ export default function Preview({ top, mid, bot }) {
   return (
     <div>
       <img src={`${process.env.PUBLIC_URL}/top/${top}.jpg`} />
+      <br></br>
       <img src={`${process.env.PUBLIC_URL}/mid/${mid}.jpg`} />
+      <br></br>
       <img src={`${process.env.PUBLIC_URL}/bot/${bot}.jpg`} />
     </div>
   );

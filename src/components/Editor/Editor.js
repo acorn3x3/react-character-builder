@@ -6,6 +6,7 @@ import { useState } from 'react';
 export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
   const [topCount, setTopcount] = useState(0);
   const [midCount, setMidcount] = useState(0);
+  const [botCount, setBotcount] = useState(0);
 
   const topHandler = (e) => {
     setTop(e.target.value);
@@ -21,6 +22,9 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
   };
   const botHandler = (e) => {
     setBot(e.target.value);
+    setBotcount((currentState) => {
+      return currentState + 1;
+    });
   };
 
   return (
@@ -67,8 +71,7 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
         <option value="7">Excaliboot</option>
       </select>
       <div>
-        <Count topCount={topCount} midCount={midCount} />
-        
+        <Count topCount={topCount} midCount={midCount} botCount={botCount} />
       </div>
     </div>
   );
