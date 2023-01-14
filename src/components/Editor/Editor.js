@@ -1,9 +1,16 @@
 import React from 'react';
 import './Editor.css';
+import Count from '../Count/Count';
+import { useState } from 'react';
 
 export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
+  const [topCount, setTopcount] = useState(0);
+
   const topHandler = (e) => {
     setTop(e.target.value);
+    setTopcount((currentState) => {
+      return currentState + 1;
+    });
   };
   const midHandler = (e) => {
     setMid(e.target.value);
@@ -55,6 +62,9 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot }) {
         <option value="6">Ninja</option>
         <option value="7">Excaliboot</option>
       </select>
+      <div>
+        <Count topCount={topCount} />
+      </div>
     </div>
   );
 }
