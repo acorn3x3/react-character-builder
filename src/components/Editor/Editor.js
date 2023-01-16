@@ -8,6 +8,8 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, se
   const [midCount, setMidcount] = useState(0);
   const [botCount, setBotcount] = useState(0);
   const [handCount, setHandcount] = useState(0);
+  const [catchPhrase, setCatchphrase] = useState([]);
+  const [textInput, setTextinput] = useState('');
 
   const topHandler = (e) => {
     setTop(e.target.value);
@@ -32,6 +34,11 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, se
     setHandcount((currentState) => {
       return currentState + 1;
     });
+  };
+
+  const catchphraseHandler = () => {
+    setCatchphrase((currentState) => [...currentState, textInput]);
+    setTextinput('');
   };
 
   return (
@@ -92,7 +99,13 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, se
       </div>
       <div>
         <label>Catchphrase</label>
-        <input type="text"></input>
+        <input type="text" value={textInput} onChange={(e) => setTextinput(e.target.value)}></input>
+        <button onClick={catchphraseHandler}>Submit</button>
+        <ul>
+          {catchPhrase.map((e) => {
+            return <li key={e}>{e}</li>;
+          })}
+        </ul>
       </div>
     </div>
   );
