@@ -10,6 +10,7 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, se
   const [handCount, setHandcount] = useState(0);
   const [catchPhrase, setCatchphrase] = useState([]);
   const [textInput, setTextinput] = useState('');
+  const [textCount, setTextcount] = useState(0);
 
   const topHandler = (e) => {
     setTop(e.target.value);
@@ -36,9 +37,13 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, se
     });
   };
 
+  // eslint-disable-next-line no-unused-vars
   const catchphraseHandler = () => {
     setCatchphrase((currentState) => [...currentState, textInput]);
     setTextinput('');
+    setTextcount((currentState) => {
+      return currentState + 1;
+    });
   };
 
   return (
@@ -95,7 +100,13 @@ export default function Editor({ top, setTop, mid, setMid, bot, setBot, hand, se
         <option value="7">Excaliboot</option>
       </select>
       <div>
-        <Count topCount={topCount} midCount={midCount} botCount={botCount} handCount={handCount} />
+        <Count
+          topCount={topCount}
+          midCount={midCount}
+          botCount={botCount}
+          handCount={handCount}
+          textCount={textCount}
+        />
       </div>
       <div>
         <label>Catchphrase</label>
