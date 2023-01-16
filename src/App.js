@@ -7,7 +7,14 @@ import background from '../src/bg.jpg';
 
 function App() {
   return (
-    <div className="App" style={{ backgroundImage: `url(${background})` }}>
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100%',
+      }}
+    >
       <Header />
       <Home />
       <Footer />

@@ -1,5 +1,5 @@
 .App {
   display: grid;
   grid-template-rows: 20px 89.2vh 40px;
-  background-image: cover;
+  color: white;
 }
